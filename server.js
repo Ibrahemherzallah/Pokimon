@@ -29,7 +29,6 @@ app.get("/" , async (req,res) => {
      'https://assets.pokemon.com/assets/cms2/img/pokedex/full/700.png',
      'https://shop7.webmodule.prestashop.net/pokedoge/11754-large_default/jynx.jpg',
 ]
-
     for(let i=0 ; i<9 ; i++){
         PokimonsArr[i] = await pokimonFunction(pokimonName[i]);
     }

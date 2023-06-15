@@ -1,16 +1,22 @@
 <%- include('partials/header')  %>
-<% for(let i=0 ; i<poc.length; i++) { %>
-  <div class="cards-div" >
-    <div class="card" >
-        <img src="<%= pocImg[i]  %>">
-        <div class="card-body">
-          <h5 class="card-title"><b>Name :</b><%= poc[i].data.name %></h5>
-          <e><b>Order : </b><%=poc[i].data.order %></e>
-          <br>
-          <br>
-          <a href="https://pokeapi.co/api/v2/pokemon/<%= poc[i].data.name%>" class="btn btn-primary">More information</a>
-        </div>
+  <div class="boody"> 
+    <h1 class="title">Pokimons</h1>
+    <% for(let i=0 ; i<poc.length; i++) { 
+      if(i == 0 || i == 3 || i == 6) { %>
+      <div class="cards-div">
+        <%for(let j=0 ; j<3 ; j++) { %>
+          <div class="card">
+              <img src="<%= pocImg[i+j]%>"> 
+              <div class="card-body">
+                <h5 class="card-title"><b>Name :</b><%= poc[i+j].data.name %></h5>
+                <e><b>Order : </b><%=poc[i+j].data.order %></e>
+                <br>
+                <br>
+                <a href="https://pokeapi.co/api/v2/pokemon/<%= poc[i+j].data.name%>" class="btn btn-primary">More information</a>
+              </div>
+          </div>
+        <% }%>  
       </div>
+    <%} } %>
   </div>
- <% } %>
 <%- include('partials/footer')  %>
